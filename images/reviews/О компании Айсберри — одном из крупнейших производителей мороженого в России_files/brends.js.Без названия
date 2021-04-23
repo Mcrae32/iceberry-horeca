@@ -1,0 +1,44 @@
+//dots
+var dot1 = document.getElementById("dot1");
+var dot2 = document.getElementById("dot2");
+var dot3 = document.getElementById("dot3");
+var dot4 = document.getElementById("dot4");
+var dot5 = document.getElementById("dot5");
+var arrayDots = [dot1, dot2, dot3, dot4, dot5];
+
+//slides
+var slide1 = document.getElementById("fil");
+var slide2 = document.getElementById("pv");
+var slide3 = document.getElementById("ar");
+var slide4 = document.getElementById("zr");
+var slide5 = document.getElementById("dm");
+var slidesArray = [slide1, slide2, slide3, slide4, slide5];
+
+
+function clickDots(dot, slide) {
+
+	dot.onclick = function() {
+		for (var i = 0; i < arrayDots.length; i ++) {
+			arrayDots[i].classList.remove("active");
+		};
+
+		dot.classList.add("active");
+
+		for (var i = 0; i < slidesArray.length; i ++) {
+			slidesArray[i].style.display = "none";
+		};
+
+		slide.style.display = "block";
+	};
+
+}
+
+//run
+clickDots(dot1, slide1);
+clickDots(dot2, slide2);
+clickDots(dot3, slide3);
+clickDots(dot4, slide4);
+clickDots(dot5, slide5);
+
+
+	

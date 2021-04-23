@@ -1,0 +1,170 @@
+$(document).ready(function() {
+/*
+    $.backstretch(bgArray, {duration: 3000, fade: 750});
+
+    $('.bxslider').bxSlider({
+        pager: false,
+        nextSelector: '.next',
+        prevSelector: '.prev',
+        nextText: '',
+        prevText: '',
+        preloadImages: 'all',
+        auto: true,
+        autoStart: true
+    });
+
+    $('.best-causes').bxSlider({
+        pager: false,
+        nextSelector: '.rez-next',
+        prevSelector: '.rez-prev',
+        nextText: '',
+        prevText: '',
+        preloadImages: 'all',
+        auto: false,
+        autoStart: false
+    });
+/*
+    brandSlider = $('.brandSlider').bxSlider({
+        auto: false,
+        minSlides: 2,
+        maxSlides: 10,
+        slideWidth: 150,
+        slideMargin: 30,
+        pager: false,
+        nextSelector: '.next',
+        prevSelector: '.prev',
+        nextText: '',
+        prevText: '',
+        preloadImages: 'all',
+        infiniteLoop: false,
+        moveSlides: 1,
+        onSliderLoad: function(currentIndex) {
+            var brandSlider = document.getElementById('brandSlider');
+
+            if (currentItem > 4) {
+                brandSlider.classList.add('catMargin');
+            };
+
+            var currentSlide = brandSlider.getElementsByTagName('li')[currentItem];
+            var marker = document.createElement('div');
+            marker.classList.add('marker');
+
+            if (currentSlide != undefined) {
+                currentSlide.classList.add('active');
+                currentSlide.appendChild(marker);
+            };
+    });
+
+    catSlider = $('.catSlider').bxSlider({
+        auto: false,
+        minSlides: 2,
+        maxSlides: 10,
+        slideWidth: 150,
+        slideMargin: 0,
+        pager: false,
+        nextSelector: '.icons-next',
+        prevSelector: '.icons-prev',
+        nextText: '',
+        prevText: '',
+        preloadImages: 'all',
+        infiniteLoop: false,
+        moveSlides: 1,
+        onSliderLoad: function(currentIndex) {
+            var catSlider = document.getElementById('catSlider');
+
+            if (currentIcon > 5) {
+                catSlider.classList.add('catMargin');
+            };
+
+            var currentSlide = catSlider.getElementsByTagName('li')[currentIcon];
+            var marker = document.createElement('div');
+            marker.classList.add('marker');
+
+            if (currentSlide != undefined) {
+                currentSlide.classList.add('active');
+                currentSlide.appendChild(marker);
+            };
+        }
+    });
+
+    if (currentItem != undefined) {brandSlider.goToSlide(currentItem)};
+    if (currentIcon != undefined) {catSlider.goToSlide(currentIcon)};
+*/
+    var OldOpt = $('#allContacts div.active a').attr('class');
+    OldOpt = '#' + OldOpt;
+    /*alert (OldOpt);*/
+     
+    $('#allContacts a').click(function () {
+        $(OldOpt).css('display','none');
+        $("#allContacts div").removeClass('active');
+        var NewOpt = this.className;
+        $( this ).parent().addClass('active');
+        NewOpt = '#' + NewOpt;
+        /*alert (NewOpt);*/
+
+        $(NewOpt).css('display','block');
+        OldOpt = NewOpt;
+    });
+      /*
+    $ii=1;
+    function anim() {
+       $("#wrap img.bgfade").first().appendTo('#wrap').fadeOut(1500);
+       $("#wrap img").first().fadeIn(1500);      
+       if (($ii<=20)) {var timer = setTimeout(anim, 4000);}
+       else {clearTimeout (timer);}
+       $ii++;
+    }
+    anim();*/
+
+});
+/*
+$(document).ready(function(){
+  $("#calk-form select").change(function(){
+    SubmitCalkForm();
+  });
+});
+
+function SubmitCalkForm(){
+  $.ajax({
+    type:"POST",
+    url:"/include/inc_calk_profit.php", 
+    dataType:"html",
+    data:$("#calk-form").serialize(),
+    success:function(data){
+      $('#calk_profit_popup').html(data);
+      $("#calk-form select").change(function(){
+        SubmitCalkForm();
+      });
+    }
+  }); 
+}
+
+window.BXDEBUG = true;
+BX.ready(function(){
+   var oPopup = new BX.PopupWindow('call_feedback', window.body, {
+      autoHide : true,
+      offsetLeft : 0,
+      lightShadow : true,
+      closeIcon : true,
+      closeByEsc : true,
+      overlay: {
+         backgroundColor: 'gray', opacity: '50', position: 'fixed',height: '100%'
+      }
+   });
+   oPopup.setContent(BX('calk_profit_popup'));
+   BX.bindDelegate(
+      document.body, 'click', {className: 'calk_button' },
+         BX.proxy(function(e){
+            if(!e)
+               e = window.event;
+            oPopup.show();
+            return BX.PreventDefault(e);
+         }, oPopup)
+   );
+
+    var clearStyle = document.getElementsByTagName('del');
+    for (var i = 0; i <= clearStyle.length; i++) {
+      clearStyle[i].classList.add('clear');
+    };   
+   
+});*/

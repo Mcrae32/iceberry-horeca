@@ -1,0 +1,123 @@
+.vybor-2018 {
+  display: inline-block;
+  position: absolute;
+  top: 39%;
+  right: 6%;
+  width: 204px;
+  height: 112px;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+}
+
+.vybor-2018 img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (min-width:1500px) and (max-width:1800px) {
+  .vybor-2018 {
+    top: 42%;
+    right: 6%;
+    width: 175px;
+  }
+}
+
+@media only screen and (min-width:1249px) and (max-width:1499px) {
+  .vybor-2018 {
+    top: 18%;
+    right: 31%;
+  }
+}
+/*
+  .vybor-2018 {
+    top: 21%;
+    right: 39%;
+    width: 150px;
+  }
+*/
+@media only screen and (min-width:1165px) and (max-width:1250px) {
+  
+
+
+}
+
+@media only screen and (min-width:1024px) and (max-width:3500px) {
+  
+
+}
+
+@media only screen and (min-width:1024px) and (max-width:1164px) {
+  
+
+}
+
+@media only screen and (min-width:0px) and (max-width:1301px) {
+  
+}
+
+@media only screen and (min-width: 1302px) and (max-width: 3500px) {
+  
+}
+
+@media only screen and (min-width:993px) and (max-width:1301px) {
+  .vybor-2018 {
+    top: 21%;
+    right: 45%;
+    width: 150px;
+  }
+}
+
+@media only screen and (min-width:0px) and (max-width:1259px) {
+	
+}
+
+@media only screen and (min-width:0px) and (max-width:1024px) {
+	
+ 
+}
+@media only screen and (min-width:768px) and (max-width:992px) {
+  
+}
+
+
+
+@media only screen and (min-width:0px) and (max-width:992px) {
+  .vybor-2018 {
+    top: 31%;
+  }
+}
+
+@media only screen and (min-width:590px) and (max-width:992px) {
+  
+}
+
+@media only screen and (min-width:0px) and (max-width:768px) {
+  
+  
+}
+
+@media only screen and (min-width:0px) and (max-width:700px) {
+  
+
+}
+
+@media only screen and (min-width:0px) and (max-width:590px) {
+  
+}
+
+@media only screen and (min-width:0px) and (max-width:511px) {
+  
+}
+
+@media only screen and (min-width:0px) and (max-width:490px) {
+  .vybor-2018 {
+    display: none;
+  }
+}
+
+@media only screen and (min-width:0px) and (max-width:375px) {
+
+}
+
+
+

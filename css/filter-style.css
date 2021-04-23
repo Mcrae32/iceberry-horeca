@@ -1,0 +1,81 @@
+.filter-catalog {
+   /* overflow: hidden;*/
+}
+
+.section-filter {
+    background-color: #241107;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #c28d52;
+    font-family: 'PT Sans Narrow', 'Arial Narrow', Arial, sans-serif;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    border: 1px solid #f5ebdd;
+    border-radius: 10px;
+    padding: 5px 20px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    height: 230px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.filter-catalog-sections a:hover .section-filter, 
+.filter-catalog-sections a:focus .section-filter, 
+.filter-catalog-sections a:active .section-filter {
+    -webkit-box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.26);
+} 
+
+.section-filter h4 {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Conv_Futura PT Book',Sans-Serif;
+    font-size: 1.5em;
+    text-shadow: 1px 2px 3px rgba(42, 28, 19, 1);
+    letter-spacing: 1px;
+}
+
+.filter-catalog-sections a:hover .section-filter,  
+.filter-catalog-sections a:focus .section-filter,  
+.filter-catalog-sections a:active .section-filter {
+    text-decoration: none;
+}
+
+.filter-content {
+    background-color: #FBF8F4;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 15px;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    background-clip: padding-box;
+    outline: 0;    
+    padding-bottom: 35px;
+    overflow: hidden;
+}
+
+.filter-catalog .modal-header h5::after {
+    top: 57px;
+}
+
+.modal-header {
+    border: 0;
+}
+
+.modal-header .close {
+    margin-top: 9px;
+    opacity: 1;
+    color:#323232;
+}
+
+.filter-content a {
+    height: 100%;
+}

@@ -1,0 +1,157 @@
+$(document).ready(function(){
+  $('.brandSlider').bxSlider({
+    slideWidth: 180,
+    slideMargin: 30,
+    pager: false,
+    minSlides: 2,
+    maxSlides: 10,
+    moveSlides: 1,
+    slideMargin: 10,
+    nextSelector: '.next',
+    prevSelector: '.prev',
+    nextText: '',
+    prevText: '',
+    preloadImages: 'all',
+    infiniteLoop: false
+  });
+
+  $('.catSlider').bxSlider({
+    auto: false,
+        minSlides: 2,
+        maxSlides: 10,
+        slideWidth: 150,
+        slideMargin: 0,
+        pager: false,
+        nextSelector: '.icons-next',
+        prevSelector: '.icons-prev',
+        nextText: '',
+        prevText: '',
+        preloadImages: 'all',
+        infiniteLoop: false,
+        moveSlides: 1
+  });
+  $('.best-causes').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: false,
+    autoplay: true,
+    autoplaySpeed: 3500
+  });
+
+	$('.header_slider').slick({
+		dots: false,
+		infinite: true,
+		speed: 2550,
+		slidesToShow: 1,
+		adaptiveHeight: false,
+		autoplay: true,
+		autoplaySpeed: 5500,
+		fade: true
+	});
+
+	$('.slid').slick({
+		dots: false,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 1,
+		adaptiveHeight: false,
+		autoplay: false,
+		autoplaySpeed: 6500
+	});
+
+  $("#calk-form select").change(function(){
+	SubmitCalkForm();
+  });
+  
+  
+  			$('.open-modal, .news-name').click(function(e){
+				e.preventDefault();
+				var url = $(this).attr("href");
+				$.ajax({
+					type:"GET",
+					url:url,
+					dataType:"html",
+					success:function(G){
+						
+						if(G.indexOf("<video")==-1){
+							$('#ModalOpen .modal-content').html(G);
+							
+							$('#ModalOpen .modal-img').removeClass("slick-initialized slick-slider").html("");
+							$('#ModalOpen .modal-content img').each(function(){
+								var src = $(this).attr("src");
+								$('#ModalOpen .modal-img').append("<div><img src='"+src+"' /></div>");
+							});
+						}else{
+							$('#ModalOpen>div').html(G);
+						}
+						$('#ModalOpen .modal-content img').remove();
+						var dialog = $('#ModalOpen').dialog({width: "50%", modal: true, closeOnEscape: true});
+						
+						$('.ui-dialog-titlebar-close').click(function(event){
+							event.preventDefault();
+							$('#ModalOpen').dialog("close");
+						})
+						$('#ModalOpen .modal-img').slick({
+							dots: true,
+							infinite: true,
+							speed: 100,
+							slidesToShow: 1,
+							adaptiveHeight: false,
+							autoplay: true,
+							autoplaySpeed: 4500,
+						});
+					},
+					error:function(G){alert("Ошибка! Повторите позже!");}
+				});
+			});
+
+});
+
+function SubmitCalkForm(){
+  $.ajax({
+	type:"POST",
+	url:"/include/inc_calk_profit.php", 
+	dataType:"html",
+	data:$("#calk-form").serialize(),
+	success:function(data){
+	  $('#calk_profit_popup').html(data);
+	  $("#calk-form select").change(function(){
+		SubmitCalkForm();
+	  });
+	}
+  }); 
+}
+
+window.BXDEBUG = true;
+BX.ready(function(){
+   var oPopup = new BX.PopupWindow('call_feedback', window.body, {
+	  autoHide : true,
+	  offsetLeft : 0,
+	  lightShadow : true,
+	  closeIcon : true,
+	  closeByEsc : true,
+	  overlay: {
+		 backgroundColor: 'gray', opacity: '50', position: 'fixed',height: '100%'
+	  }
+   });
+   oPopup.setContent(BX('calk_profit_popup'));
+   BX.bindDelegate(
+	  document.body, 'click', {className: 'calk_button' },
+		 BX.proxy(function(e){
+			if(!e)
+			   e = window.event;
+			oPopup.show();
+			return BX.PreventDefault(e);
+		 }, oPopup)
+   );
+
+	var clearStyle = document.getElementsByTagName('del');
+	if(clearStyle.length>0){
+	for (var i = 0; i <= clearStyle.length; i++) {
+	  clearStyle[i].classList.add('clear');
+	};   
+	}
+   
+});
